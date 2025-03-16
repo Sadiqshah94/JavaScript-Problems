@@ -5,29 +5,14 @@ console.log("Problem Solving");
 // Write a JavaScript program to compare two objects to determine if the first 
 // contains equivalent property values to the second one.
 
-// LINE BY Line solution 
-const findSame = (objA,objB)=>{
-    const obj2Keys = Object.keys(objB)
-    const checkAllKeysInSameInObj1 = obj2Keys.every((key)=> key in objA)
-    const checkAllValueInSameInObj1 = obj2Keys.every((keys)=>objA[keys]== objB[keys])
-    const isSame = checkAllKeysInSameInObj1 && checkAllValueInSameInObj1;
-    return `the first contains equivalent property values to the second one : ${isSame}`;
-}
 
-console.log(findSame({ age: 25, hair: 'long', beard: true }, { hair: 'long', beard: true })); // true
-console.log(findSame({ hair: 'long', beard: true }, { age: 25, hair: 'long', beard: true })); // false
-console.log(findSame({ hair: 'long', beard: true }, { age: 26, hair: 'long', beard: true })); // false
+// first find keys and then value 
 
-
-
-// One Line Solution 
-
-const isFindSame = (objA,ObjB)=>{
+const isFindSame = (objA, ObjB) => {
     // isMatch = Object.keys(ObjB).every((keys)=>keys in objA && objA[keys] == ObjB[keys]);
     // OR 
-    isMatch = Object.keys(ObjB).every((keys)=> objA.hasOwnProperty(keys) && objA[keys] == ObjB[keys]);
+    isMatch = Object.keys(ObjB).every((keys) => objA.hasOwnProperty(keys) && objA[keys] == ObjB[keys]);
     return `the first contains equivalent property values to the second one : ${isMatch}`;
-    
 }
 console.log(isFindSame({ age: 25, hair: 'long', beard: true }, { hair: 'long', beard: true })); // true
 console.log(isFindSame({ hair: 'long', beard: true }, { age: 25, hair: 'long', beard: true })); // false
@@ -35,4 +20,15 @@ console.log(isFindSame({ hair: 'long', beard: true }, { age: 26, hair: 'long', b
 
 // ==============================================================================================================
 
+// 2. Copy String to Clipboard
 
+// Write a JavaScript program to copy a string to the clipboard.
+
+const copyTextToclipboard = (str) => {
+    navigator.clipboard.writeText(str).then(() => {
+        console.log("Text copied to clipboard successfully!");
+    }).catch(err => {
+        console.error("Failed to copy text: ", err);
+    });
+}
+copyTextToclipboard("Sadiq Shaha");
