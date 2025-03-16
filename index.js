@@ -24,10 +24,29 @@ console.log(isFindSame({ hair: 'long', beard: true }, { age: 26, hair: 'long', b
 
 // Write a JavaScript program to copy a string to the clipboard.
 
-const copyTextToclipboard = (str) => {
+// const copyTextToclipboard = (str) => {
+//      navigator.clipboard.writeText(str).then(()=>{
+//         console.log("text copied succesfully")
+//     }).catch((err)=>{
+//         console.log("Failed to copied text",err)
+//     })
+// }
+// copyTextToclipboard("asldkda");
 
-    
 
 
+// 3. CSV String to 2D Array
+
+// Write a JavaScript program to convert a comma-separated value (CSV) string to a 2D array.
+
+const CSVto2DArray = (csvStr)=>{
+    return csvStr.split('\n').map((str)=>str.split(','));
 }
-copyTextToclipboard("Sadiq Shaha");
+// input must be  like this
+// a,b\nc,d
+const string = "a,b\nc,d";
+console.log(CSVto2DArray(string));
+
+
+
+
