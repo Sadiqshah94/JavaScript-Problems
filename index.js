@@ -8,10 +8,10 @@ console.log("Problem Solving");
 
 // first find keys and then value 
 
-const isFindSame = (objA, ObjB) => {
-    // isMatch = Object.keys(ObjB).every((keys)=>keys in objA && objA[keys] == ObjB[keys]);
+const isFindSame = (objA, objB) => {
+    // isMatch = Object.keys(objB).every((keys)=>keys in objA && objA[keys] == objB[keys]);
     // OR 
-    isMatch = Object.keys(ObjB).every((keys) => objA.hasOwnProperty(keys) && objA[keys] == ObjB[keys]);
+    isMatch = Object.keys(objB).every((keys) => objA.hasOwnProperty(keys) && objA[keys] == objB[keys]);
     return `the first contains equivalent property values to the second one : ${isMatch}`;
 }
 console.log(isFindSame({ age: 25, hair: 'long', beard: true }, { hair: 'long', beard: true })); // true
@@ -25,10 +25,9 @@ console.log(isFindSame({ hair: 'long', beard: true }, { age: 26, hair: 'long', b
 // Write a JavaScript program to copy a string to the clipboard.
 
 const copyTextToclipboard = (str) => {
-    navigator.clipboard.writeText(str).then(() => {
-        console.log("Text copied to clipboard successfully!");
-    }).catch(err => {
-        console.error("Failed to copy text: ", err);
-    });
+
+    
+
+
 }
 copyTextToclipboard("Sadiq Shaha");
